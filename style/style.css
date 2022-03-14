@@ -6,18 +6,23 @@
 body {
     height: 100vh;
     width: 100vw;
+    overflow-x: hidden;
 }
 nav {
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 10vh;
     box-shadow: 0vh 0vh 1vh;
 }
 nav a img {
     width: 4vw;
-    margin-right: 60vh;
-    margin-left: 5vh;
+    position: absolute;
+    left: 8%;
+    top: 3%;
 }
+
+
 nav a  {
     text-decoration: none;
     color: black;
@@ -41,3 +46,22 @@ nav a p:hover::after {
 a p:hover {
     color: black;
 }
+
+nav a i {
+    display: block;
+}
+section img {
+    display: flex;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.5s ease-in-out;
+}
+#text_bild {
+    position: absolute;
+    top: 45%;
+}
+
+
+
+
