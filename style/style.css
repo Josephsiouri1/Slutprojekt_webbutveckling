@@ -14,6 +14,10 @@ nav {
     justify-content: center;
     height: 10vh;
     box-shadow: 0vh 0vh 1vh;
+    background-color: white;
+    position: sticky;
+    top: 0%;
+    z-index: 1;
 }
 nav a img {
     width: 4vw;
@@ -21,8 +25,6 @@ nav a img {
     left: 8%;
     top: 3%;
 }
-
-
 nav a  {
     text-decoration: none;
     color: black;
@@ -55,13 +57,55 @@ section img {
     width: 90vw;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 5%;
     transition: 0.5s ease-in-out;
 }
-#text_bild {
+#text_image {
     position: absolute;
     top: 45%;
 }
-
-
-
-
+article aside p {
+    display: flex;
+    margin-left: 5%;
+}
+article aside a {
+     color: black;
+     margin-left: 90vw;
+     position: relative;
+     bottom: 4vh;
+}
+.big_text {
+   font-size: 2rem;
+}
+.grey_text {
+    color: grey;
+}
+article section  {
+    display: flex;
+    width: 20vw;
+    height: 55vh;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+article section img {
+    padding: 2%;
+}
+article section span {
+    display: flex;
+    flex-wrap: wrap;
+    height: 5vh;
+    margin-right: 10vw;
+}
+section span p {
+    padding-bottom: 2vh;
+}
+.product_condition1 {
+    padding-right: 10vw;
+    border-left: 0.2rem solid rgb(0, 0, 0);
+}
+.name {
+    color: rgb(68,68,68);
+}
+.color {
+    color: rgb(110,110,110);
+}

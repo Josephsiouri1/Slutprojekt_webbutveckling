@@ -1,5 +1,5 @@
-let intro_bild = document.getElementById("intro_bild");
-let text_bild = document.getElementById("text_bild");
+let intro_bild = document.getElementById("intro_image");
+let text_bild = document.getElementById("text_image");
 
 intro_bild.addEventListener("mouseover", function(e){
     intro_bild.style.width = "100vw";
