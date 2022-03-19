@@ -111,9 +111,66 @@ section a {
 .name {
     color: rgb(68,68,68);
 }
-.color {
+.product_color {
     color: rgb(110,110,110);
 }
 .price {
     color: black;
 }
+.the_essentials {
+    display: flex;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
+    transition: 0.5s linear;
+}
+.the_essentials:hover {
+    width: 100vw;
+}
+.the_essentials_text {
+    display: flex;
+    position: absolute;
+    top: 230vh;
+    left: 42vw;
+}
+.the_essentials_text_color {
+    color: white;
+}
+.the_essentials_text1 {
+    font-size: 3rem;
+    position: absolute;
+    left: 35vw;
+}
+.the_essentials_text2 {
+    font-size: 1.2rem;
+    position: absolute;
+    top: 240vh;
+}
+article button {
+    display: flex;
+    background-color: aliceblue;
+    align-items: center;
+    justify-content: center;
+    width: 10vw;
+    height: 6vh;
+    border-radius: 20px;
+    position: absolute;
+    top: 245vh;
+    left: 36vw;
+}
+article button a {
+    text-decoration: none;
+    font-family:'Fredoka', sans-serif;
+    color: black;
+}
+.shop_mens {
+    position: absolute;
+    left: 54vw;
+    background-color: gray;
+}
+
+.shop_mens a {
+    color: white;
+}
+
