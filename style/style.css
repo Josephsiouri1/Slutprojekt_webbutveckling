@@ -210,4 +210,52 @@ article button a {
     align-items: center;
     justify-content: center;
 }
+.sign_in {
+    display: flex;
+    margin-top: 5%;
+    background-color: black;
+    height: 20vh;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fredoka', sans-serif;
+}
+.sign_in a {
+    display: flex;
+    margin-left: 5%;
+    color: black;
+    background-color: white;
+    width: 8vw;
+    height: 5vh;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+footer {
+    display: flex;
+    margin-top: 5%;
+    justify-content: space-around;
+    height: 40vh;
+    padding-bottom: 3%;
+}
+footer th a {
+    text-decoration: none;
+    color: grey;
+    margin-left: 2vw;
 
+}
+footer th {
+    height: 5vh;
+}
+footer a:hover {
+    color: rgba(110,110,110,0.5);
+}
+footer th img {
+    width: 15vw;
+    margin-left: 4vw;
+} 
+footer th span {
+    background-color: lightgray;
+    margin-left: 10vw;
+    border-radius: 5px;
+}
