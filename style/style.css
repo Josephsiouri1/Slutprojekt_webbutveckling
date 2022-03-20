@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Corinthia&family=Courgette&family=Festive&family=Fredoka&family=Italianno&family=Jim+Nightshade&family=Lobster&family=Meow+Script&family=Merienda&display=swap');
-* {
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Architects+Daughter&family=Corinthia&family=Courgette&family=Festive&family=Fredoka&family=Italianno&family=Jim+Nightshade&family=Lobster&family=Meow+Script&family=Merienda&display=swap');* {
     padding: 0%;
     margin: 0%;
 }
@@ -123,11 +122,8 @@ section a {
     margin-left: auto;
     margin-right: auto;
     margin-top: 5vh;
-    transition: 0.5s linear;
 }
-.the_essentials:hover {
-    width: 100vw;
-}
+
 .the_essentials_text {
     display: flex;
     position: absolute;
@@ -172,5 +168,46 @@ article button a {
 
 .shop_mens a {
     color: white;
+}
+
+.background_colors {
+    display: flex;
+    height: 60vh;
+    flex: 90vw;
+    margin-top: 5%;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: space-around;
+}
+.shop_womens {
+    background-color: lightskyblue;
+}
+.shop_mens2 {
+    background-color: darkblue;
+}
+.shop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45vw;
+}
+.background_colors p {
+    color: aliceblue; 
+    font-size: 2rem;
+    font-family: 'Abril Fatface'
+}
+.background_colors a {
+    display: flex;
+    position: relative;
+    top: 20%;
+    right: 15%;
+    background-color: aliceblue;
+    color: black;
+    font-family: 'Fredoka', sans-serif;
+    height: 5vh;
+    border-radius: 12px;
+    width: 7vw;
+    align-items: center;
+    justify-content: center;
 }
 
