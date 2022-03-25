@@ -150,7 +150,6 @@ article figcaption a {
     display: flex;
     text-decoration: none;
     font-family:'Fredoka';
-    color: black;
     justify-content: center;
     align-items: center;
     width: 10vw;
@@ -164,6 +163,7 @@ article figcaption a {
 }
 .shop_womens1 {
     background-color: white;
+    color: black;
 }
 
 .background_colors {
