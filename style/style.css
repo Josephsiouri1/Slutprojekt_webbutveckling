@@ -2,6 +2,10 @@
     padding: 0%;
     margin: 0%;
 }
+* {
+    padding: 0%;
+    margin: 0%;
+}
 body {
     height: 100vh;
     width: 100vw;
@@ -118,56 +122,48 @@ section a {
 }
 .the_essentials {
     display: flex;
+    background-image: url(../images/the_essentials.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 5vh;
+    height: 80vh;
     width: 90vw;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5vh;
-}
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+} 
 
-.the_essentials_text {
-    display: flex;
-    position: absolute;
-    top: 230vh;
-    left: 42vw;
+.the_essentials_text1 {
+    font-size: 3rem;
+}
+.the_essentials_text2 {
+    font-size: 1.2rem;
+    padding-bottom: 2%;
 }
 .the_essentials_text_color {
     color: white;
 }
-.the_essentials_text1 {
-    font-size: 3rem;
-    position: absolute;
-    left: 35vw;
-}
-.the_essentials_text2 {
-    font-size: 1.2rem;
-    position: absolute;
-    top: 240vh;
-}
-article button {
+
+article figcaption a {
     display: flex;
-    background-color: aliceblue;
-    align-items: center;
+    text-decoration: none;
+    font-family:'Fredoka';
+    color: black;
     justify-content: center;
+    align-items: center;
     width: 10vw;
     height: 6vh;
     border-radius: 20px;
-    position: absolute;
-    top: 245vh;
-    left: 36vw;
-}
-article button a {
-    text-decoration: none;
-    font-family:'Fredoka', sans-serif;
-    color: black;
-}
-.shop_mens {
-    position: absolute;
-    left: 54vw;
-    background-color: gray;
 }
 
-.shop_mens a {
+.shop_mens {
+    background-color: gray;
     color: white;
+}
+.shop_womens1 {
+    background-color: white;
 }
 
 .background_colors {
@@ -179,7 +175,7 @@ article button a {
     margin-left: auto;
     justify-content: space-around;
 }
-.shop_womens {
+.shop_womens2 {
     background-color: lightskyblue;
 }
 .shop_mens2 {
@@ -234,26 +230,48 @@ article button a {
 footer {
     display: flex;
     margin-top: 5%;
-    justify-content: space-around;
-    height: 40vh;
-    padding-bottom: 3%;
 }
 footer th a {
     text-decoration: none;
     color: grey;
     margin-left: 2vw;
-
 }
 footer th {
-    height: 5vh;
+    height: 10vh;
 }
 footer a:hover {
     color: rgba(110,110,110,0.5);
 }
 footer th img {
     width: 15vw;
-    margin-left: 4vw;
+    margin-left: 3vw;
 } 
 footer th span {
-    margin-left: 10vw;
+    margin-left: 11.5vw;
+    font-family: 'Fredoka', sans-serif;
 }
+iframe {
+    width: 15vw;
+    height: 20vh; 
+    margin-top: 3vh;
+}
+th i {
+    font-size: 2rem;
+    padding: 1% 1%;
+    color: black;
+}
+th i:hover {
+    color: grey;
+}
+.find_us {
+    font-size: 1.5rem;
+    font-family: 'Fredoka', sans-serif;
+}
+/*
+-problem med knapp länken
+-fixa tbody "what is tbody, why"
+-fixa responsity...
+-gör en search sida eller animation
+-studera in map coden
+-kundvagn som räknar upp
+*/

@@ -12,3 +12,5 @@ text_bild.addEventListener("mouseover", function(e) {
 text_bild.addEventListener("mouseleave", function(e) {
     intro_bild.style.width = "90vw";
 })
+
+    
