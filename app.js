@@ -24,3 +24,22 @@ searchInput.onkeydown = function(event) {
 searchInput.onmouseleave = function() {
         searchInput.value = ""    
 }
+
+let numberOfProducts = document.getElementById("product-counter").innerHTML;
+
+
+function newProductNumber(currentNumber) {
+
+   let number = Number(currentNumber);
+  
+   number += 1
+
+   number = number.toString()
+
+   currentNumber = number
+
+   console.log(currentNumber)
+
+}
+  
+newProductNumber(numberOfProducts);
