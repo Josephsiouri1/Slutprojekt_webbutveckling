@@ -7,8 +7,8 @@
     margin: 0%;
 }
 body {
-    height: 100vh;
-    width: 100vw;
+    max-height: 100vh;
+    max-width: 100vw;
     overflow-x: hidden;
 }
 nav {
@@ -71,6 +71,7 @@ nav a  {
     right: 8rem;
     border: 0.1rem solid rgb(255, 255, 255);
     bottom: 0.6rem;
+    transition: all 0.8s;
 }
 nav a p::after {
     content: "";
@@ -118,6 +119,7 @@ article section {
     display: flex;
     width: 90vw;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
 }
@@ -299,6 +301,20 @@ th i:hover {
 .find_us {
     font-size: 1.5rem;
     font-family: 'Fredoka', sans-serif;
+}
+.product-view {
+    width: auto;
+    margin-left: 2vw;
+    margin-top: 3vh;
+}
+.product-viewfront {
+    width: 40vw;
+}
+.product-zoom {
+    width: 20vw;
+}
+.product-viewsides {
+    width: 20vw;
 }
 /*
 -fixa tbody "what is tbody, why"
