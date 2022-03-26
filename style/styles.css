@@ -19,7 +19,7 @@ nav {
     box-shadow: 0vh 0vh 1vh;
     background-color: white;
     position: sticky;
-    top: 0%;
+    top: 0;
     z-index: 1;
 }
 nav a img {
@@ -33,10 +33,28 @@ nav a  {
 } 
                              
 .right_icon {
-    margin-right: 25vw;
+    margin-right: 20vw;
 }
 .left_icon {
-    margin-left: 25vw;
+    margin-left: 20vw;
+}
+#search-box {
+    height: 3%;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+}
+#search-box input {
+    border: none;
+    outline: none;
+    width: 0vw;
+    font-size: 16px;
+    transition: all 0.8s;
+    cursor: pointer;
+}
+#search-box:hover input {
+    width: 10vw;
+    transition: all 0.8s;
 }
 
 nav a p::after {
@@ -268,7 +286,6 @@ th i:hover {
     font-family: 'Fredoka', sans-serif;
 }
 /*
--problem med knapp länken
 -fixa tbody "what is tbody, why"
 -fixa responsity...
 -gör en search sida eller animation
