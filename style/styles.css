@@ -139,7 +139,7 @@ section a {
     text-decoration: none;
 }
 
-.product_condition1 {
+.product_condition {
     border-left: 0.2rem solid rgb(0, 0, 0);
     float:left;
     width:50%;
@@ -279,21 +279,19 @@ footer a:hover {
 }
 footer th img {
     width: 15vw;
-    margin-left: 3vw;
 } 
 footer th span {
-    margin-left: 11.5vw;
     font-family: 'Fredoka', sans-serif;
 }
 iframe {
     width: 15vw;
     height: 20vh; 
-    margin-top: 3vh;
+    padding: 1% 1%;
 }
 th i {
     font-size: 2rem;
-    padding: 1% 1%;
     color: black;
+    padding: 2%;
 }
 th i:hover {
     color: grey;
@@ -316,9 +314,31 @@ th i:hover {
 .product-viewsides {
     width: 20vw;
 }
-/*
+.product-information {
+    position: absolute;
+    top: 20vh;
+    left: 65vw;
+    display: flex;
+    font-size: 1.2rem;
+}
+.product-discraption {
+    width: 20vw;
+    padding-top: 2vh;
+    font-size: 1.5rem;
+}
+aside div p {
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+}
+aside div img {
+    width: 5vw;
+}
+/* TODO
 -fixa tbody "what is tbody, why"
 -fixa responsity...
 -studera in map coden
 -kundvagn som räknar upp
+-gör en sida med en tabell till kundvagnen
+-gör en login sida med rättelse beroende på mail
+-gör att text ändras vid hover andra färger
 */
