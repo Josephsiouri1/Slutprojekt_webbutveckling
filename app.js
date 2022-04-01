@@ -16,7 +16,6 @@ text_bild.addEventListener("mouseleave", function() {
 
 let searchInput = document.getElementById("search-input");
 let searchBox = document.getElementById("search-box");
-let numberOfProducts = document.getElementById("product-counter");
 
 searchInput.onkeydown = function(event) {
     if (event.key === "Enter") {
@@ -26,27 +25,8 @@ searchInput.onkeydown = function(event) {
 searchInput.onmouseleave = function() {
         searchInput.value = ""    
 }
-searchBox.onmouseover = function() {
-    numberOfProducts.style.right = "3.9rem";
-}
-searchBox.onmouseleave = function() {
-    numberOfProducts.style.right = "8rem";
-}
 
 
-
-function newProductNumber(currentNumber) {
-
-   let number = Number(currentNumber);
-  
-   number += 1
-
-   number = number.toString()
-
-   currentNumber = number
-
-   console.log(currentNumber)
-
-}
   
 newProductNumber(numberOfProducts);
+

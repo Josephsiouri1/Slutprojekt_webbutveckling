@@ -57,7 +57,8 @@ nav a  {
     transition: all 0.8s;
 }
 #product-counter {
-    position: absolute;
+    margin-left: -15px;
+    margin-bottom: -15px;
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
@@ -318,20 +319,57 @@ th i:hover {
     position: absolute;
     top: 20vh;
     left: 65vw;
-    display: flex;
     font-size: 1.2rem;
 }
-.product-discraption {
-    width: 20vw;
-    padding-top: 2vh;
-    font-size: 1.5rem;
-}
+
 aside div p {
     margin-bottom: 2vh;
     margin-top: 2vh;
 }
 aside div img {
-    width: 5vw;
+    cursor: pointer;
+    width: 8vw;
+}
+aside div span {
+    display: inline-block;
+    border: solid 0.1vw black;
+    border-radius: 10px;
+    padding: 5%;
+    width: 2vw;
+    margin: 1vw;
+}
+.size {
+    cursor: pointer;
+}
+.size:hover {
+    background-color: black;
+    color: white;
+}
+.button-box {
+    padding-top: 10%;
+}
+.add-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    height: 6vh;
+    border-radius: 20px;
+    margin: 2%;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 5%;
+    font-family: 'Fredoka', sans-serif;
+}
+#add-to-bag {
+    background-color: rgb(0, 125, 181);
+}
+
+#add-to-wichlist {
+    background-color: grey;
+}
+#add-to-wichlist:hover {
+    background-color: lightgrey;
 }
 /* TODO
 -fixa tbody "what is tbody, why"
@@ -341,4 +379,8 @@ aside div img {
 -gör en sida med en tabell till kundvagnen
 -gör en login sida med rättelse beroende på mail
 -gör att text ändras vid hover andra färger
+
+-beskriv bilder
+
+fråga hur man fixar "countern" för båda sidorna
 */
