@@ -305,6 +305,7 @@ th i:hover {
     width: auto;
     margin-left: 2vw;
     margin-top: 3vh;
+
 }
 .product-viewfront {
     width: 40vw;
@@ -340,6 +341,7 @@ aside div span {
 }
 .size {
     cursor: pointer;
+    background-color: white;
 }
 .size:hover {
     background-color: black;

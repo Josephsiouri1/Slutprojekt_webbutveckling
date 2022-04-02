@@ -26,7 +26,3 @@ searchInput.onmouseleave = function() {
         searchInput.value = ""    
 }
 
-
-  
-newProductNumber(numberOfProducts);
-
