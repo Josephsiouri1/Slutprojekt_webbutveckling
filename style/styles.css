@@ -414,10 +414,8 @@ aside div span {
 #login-box input[type="submit"]:hover {
     background: cornflowerblue;
 }
-#login-page {
-    background-image: url(../images/login_background.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+.login-background {
+    width: 100vw;
 }
 #text-error {
     display: block;
@@ -438,4 +436,5 @@ aside div span {
 -beskriv bilder
 
 -fel med login background vid mindre skärm
+
 */

@@ -40,6 +40,7 @@ function validationSubmit() {
     let password = document.getElementById("password").value;
     let textError = document.getElementById("text-error");
     let submit = document.getElementById("submit");
+    
     submit.addEventListener("mousedown", function(e) {
         if (email === "" || password === "" || textError.style.color === "red") {
             e.preventDefault();

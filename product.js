@@ -6,7 +6,6 @@ let greenColor = new Array("images/back_view_green.webp", "images/side_view_gree
 
 let blackColor = new Array("images/shirt_back_side.webp", "images/shirt_right_side.webp", "images/shirt_front_side.webp", "images/shirt_front_side2.webp", "images/shirt_zoom_back.webp", "images/shirt_zoom_front.webp");
 
-productColorImg[0].style.border = "solid 1px black";
 
 productColorImg[0].onmousedown = function() {
     productColor[0].innerHTML = "Black/Charcoal Grey";
