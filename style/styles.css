@@ -424,6 +424,21 @@ aside div span {
     font-style: italic;
     padding: 3px;
 }
+#shopping-bag {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 60vh;
+    border-bottom: 1px solid black;
+}
+#shopping-bag h1 {
+    font-family: 'Fredoka', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 6%;
+    margin-top: 6%;
+    font-size: 2rem;
+}
 /* TODO
 -fixa tbody "what is tbody, why"
 -fixa responsity...
@@ -437,4 +452,9 @@ aside div span {
 
 -fel med login background vid mindre skärm
 
+-add thead to the other table
+
+-gemensam javascript bör delas till alla sidor
+
+-kontrollera med parentelements
 */

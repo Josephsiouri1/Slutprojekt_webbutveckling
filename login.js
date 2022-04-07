@@ -1,3 +1,16 @@
+
+let searchInput = document.getElementById("search-input");
+let searchBox = document.getElementById("search-box");
+
+searchInput.onkeydown = function(event) {
+    if (event.key === "Enter") {
+        searchInput.value = ""
+    }
+}
+searchInput.onmouseleave = function() {
+        searchInput.value = ""    
+}
+
 function validationEmail() {
     let email = document.getElementById("email").value;
     let textError = document.getElementById("text-error");

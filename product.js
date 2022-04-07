@@ -1,3 +1,16 @@
+
+let searchInput = document.getElementById("search-input");
+let searchBox = document.getElementById("search-box");
+
+searchInput.onkeydown = function(event) {
+    if (event.key === "Enter") {
+        searchInput.value = ""
+    }
+}
+searchInput.onmouseleave = function() {
+        searchInput.value = ""    
+}
+
 let productColor = document.querySelectorAll(".product_color");
 let productColorImg = document.querySelectorAll(".product-color-img");
 let productImg = document.getElementsByClassName("product-img");
@@ -41,8 +54,10 @@ for (let i = 0; i < sizes.length; i++) {
         }
         sizes[i].style.backgroundColor = "black"
         sizes[i].style.color = "white";
-    })
+    }) //problem
 }
+
+
     
 
 
@@ -59,23 +74,39 @@ function newProductNumber(currentNumber) {
     return (newNumber)
   
 }
+
+function stringToNumber(str) {
+
+    return(Number(str.replace("SEK", "")))
+
+}
+
 let errorMessage = document.createElement("p");
 
 errorMessage.innerHTML = "* Please select a size and a color to add to cart";
 errorMessage.style.color = "red";
 
 addToBag.addEventListener("click", function(e) {
+    productCharacteristics = {}
+    productCharacteristics["quantity"] = 0
     e.preventDefault();
     for (let i = 0; i < sizes.length; i++) {
         if (sizes[i].style.backgroundColor == "black") {
             for (let j = 0; j < productColorImg.length; j++) {
-                if (productColorImg[j].onmousedown) {
+                if (productColorImg[j].style.border == "solid 1px black") {
                     numberOfProducts.innerHTML = newProductNumber(numberOfProducts.innerHTML);
+                    productCharacteristics["productImg"] = productColorImg[j]
+                    productCharacteristics["productName"] = productColorImg[j].parentElement.parentElement.children[7].innerHTML
+                    productCharacteristics["size"] = sizes[i]       
+                    productCharacteristics["prize"] = productColorImg[j].parentElement.parentElement.children[6].innerHTML   
+                    productCharacteristics["quantity"] += 1
+                    productCharacteristics["total"] = productCharacteristics["quantity"] * stringToNumber(productCharacteristics["prize"])
                 }
             }
         }
     }
-    
+    addToBag.insertAdjacentHTML("afterend", errorMessage);
 
-    addToBag.insertAdjacentHTML("afterend", errorMessage.innerHTML);
+    localStorage.setItem("aboutProduct", productCharacteristics)
 })
+localStorage.setItem("error",errorMessage)
