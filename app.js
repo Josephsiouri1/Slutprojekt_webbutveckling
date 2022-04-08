@@ -25,4 +25,3 @@ searchInput.onkeydown = function(event) {
 searchInput.onmouseleave = function() {
         searchInput.value = ""    
 }
-
