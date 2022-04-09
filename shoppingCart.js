@@ -11,7 +11,10 @@ searchInput.onmouseleave = function() {
         searchInput.value = ""    
 }
 
+let productInfo = localStorage.getItem("aboutProduct")
+
+
 let cart = new Array();
 
-cart.push(localStorage.getItem("aboutProduct"));
-console.log(cart)
+cart.push(productInfo);
+console.log(cart[0]);
