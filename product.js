@@ -181,6 +181,6 @@ addToBag.addEventListener("click", function (e) {
     }
    }
 
-   
 });
 //offsetParent
+

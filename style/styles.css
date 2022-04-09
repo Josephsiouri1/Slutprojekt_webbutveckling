@@ -446,22 +446,19 @@ aside div span {
     font-family: cursive; 
     font-size: 0.9rem
 }
+div h1 {
+    cursor: pointer;
+}
+div h1 i  {
+    padding-left: 220px;
+}
 /* TODO
--fixa tbody "what is tbody, why"
--fixa responsity...
--studera in map coden
--kundvagn som räknar upp
+-fixa responsity... till alla sidor
+
 -gör en sida med en tabell till kundvagnen
--gör en login sida med rättelse beroende på mail
--gör att text ändras vid hover andra färger
 
 -beskriv bilder
 
 -fel med login background vid mindre skärm
 
--add thead to the other table
-
--gemensam javascript bör delas till alla sidor
-
--kontrollera med parentelements
 */
