@@ -30,6 +30,7 @@ function validationEmail() {
 
 }
 
+
 function validationPassword() {
     let password = document.getElementById("password").value;
     let textError = document.getElementById("text-error");
@@ -48,15 +49,40 @@ function validationPassword() {
 
 }
 
+
+
 function validationSubmit() {
+
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
     let textError = document.getElementById("text-error");
     let submit = document.getElementById("submit");
+    let loginBox = document.getElementById("login-box");
     
-    submit.addEventListener("mousedown", function(e) {
+    loginBox.on("submit",function(e) {
         if (email === "" || password === "" || textError.style.color === "red") {
-            e.preventDefault();
+            e.stopImmediatePropagation();
+            textError.innerHTML = "You're data isn't complete!";
+            textError.style.color = "red";
+        }
+        else {
+            e.stopImmediatePropagation()
+            textError.innerHTML = "You have logged in successfully!";
+            textError.style.color = "green";
         }
     })
+    /*
+    loginBox.addEventListener("mousedown", function(e) {
+        if (email === "" || password === "" || textError.style.color === "red") {
+            e.stopImmediatePropagation();
+            textError.innerHTML = "You're data isn't complete!";
+            textError.style.color = "red";
+        }
+        else {
+            e.stopImmediatePropagation()
+            textError.innerHTML = "You have logged in successfully!";
+            textError.style.color = "green";
+        }
+    })
+    */
 }

@@ -348,6 +348,10 @@ aside div span {
     background-color: black;
     color: white;
 }
+.selectedSize {
+    background-color: black;
+    color: white
+}
 #button-box {
     padding-top: 10%;
 }
@@ -380,7 +384,7 @@ aside div span {
     top:50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.8);
     text-align: center;
 }
 #login-box h1 {
@@ -395,9 +399,9 @@ aside div span {
     display: block;
     margin: 20px auto;
     text-align: center;
-    border: 3px solid blue;
+    border: 3px solid grey;
     padding: 14px 10px;
-    width: 22vw;
+    width: 220px;
     outline: none;
     color: white;
     border-radius: 24px;
@@ -405,15 +409,16 @@ aside div span {
 }
 #login-box input[type="email"]:focus, #login-box input[type="password"]:focus {
     width: 270px;
-    border-color: aquamarine;
+    border-color: rgb(240, 255, 255);
 }
 
 #login-box input[type="submit"] {
     cursor: pointer;
-    border-color: cornflowerblue;
+    border-color: lightgrey;
 }
 #login-box input[type="submit"]:hover {
-    background: cornflowerblue;
+    background: lightgray;
+    color: black;
 }
 .login-background {
     max-width: 100%;
@@ -430,7 +435,6 @@ aside div span {
     justify-content: center;
     flex-direction: column;
     height: 60vh;
-    border-bottom: 1px solid black;
 }
 #shopping-bag h1 {
     font-family: 'Fredoka', sans-serif;
@@ -440,18 +444,20 @@ aside div span {
     margin-top: 6%;
     font-size: 2rem;
 }
+#cart-container td a {
+   color: black;
+   background-color: aqua;
+   width: 10vw;
+   border-radius: 15px;
+}
 .errorMessage {
     color:red; 
     padding-bottom:20px; 
     font-family: cursive; 
     font-size: 0.9rem
 }
-div h1 {
-    cursor: pointer;
-}
-div h1 i  {
-    padding-left: 220px;
-}
+
+
 /* TODO
 -fixa responsity... till alla sidor
 
@@ -461,4 +467,7 @@ div h1 i  {
 
 -fel med login background vid mindre skärm
 
+-navbar i start sidan
+
+-problem submit login
 */

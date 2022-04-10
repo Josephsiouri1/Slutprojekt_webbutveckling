@@ -77,22 +77,6 @@ let sizes = document.getElementsByClassName("size");
 
 for (let i = 0; i < sizes.length; i++) {
   sizes[i].addEventListener("mousedown", function () {
-    for (let j = 0; j < sizes.length; j++) {
-      if (sizes[j].classList.contains("selectedSize")) {
-        sizes[j].style.backgroundColor = "white";
-        sizes[j].style.color = "black";
-
-         // problem; option delete :hover from css
-         
-
-          sizes[i].style.backgroundColor = "black";
-          sizes[i].style.color = "white";
-      
-      
-      }
-    }
-    
-
     for (let i = 0; i < sizes.length; i++) {
         if (sizes[i].classList.contains("selectedSize")) {
             sizes[i].classList.remove("selectedSize")
@@ -100,7 +84,7 @@ for (let i = 0; i < sizes.length; i++) {
     }
         sizes[i].classList.add("selectedSize")
     
-  }); //problem
+  }); 
 }
 
 function newProductNumber(currentNumber) {
@@ -138,20 +122,20 @@ addToBag.addEventListener("click", function (e) {
                 numberOfProducts.innerHTML = newProductNumber(
                   numberOfProducts.innerHTML
                 );
-                productCharacteristics.productImg = productColorImg[i].attributes[1].nodeValue;
-                productCharacteristics.productName =
+                productCharacteristics.image = productColorImg[i].attributes[1].nodeValue;
+                productCharacteristics.name =
                   productColorImg[
                     i
                   ].parentElement.parentElement.children[7].innerHTML.replace("\n","");
-                productCharacteristics.productSize = sizes[j].innerHTML;
-                productCharacteristics.productPrize =
+                productCharacteristics.size = sizes[j].innerHTML;
+                productCharacteristics.price =
                   productColorImg[
                     i
                   ].parentElement.parentElement.children[6].innerHTML;
-                productCharacteristics.productQuantity = quantity;
-                productCharacteristics.totalPrize =
-                  productCharacteristics.productQuantity *
-                  stringToNumber(productCharacteristics.productPrize);
+                productCharacteristics.quantity = quantity;
+                productCharacteristics.totalPrice =
+                  productCharacteristics.quantity *
+                  stringToNumber(productCharacteristics.price);
               }
               else {
                 selectedDetails.push(false)
@@ -169,8 +153,10 @@ addToBag.addEventListener("click", function (e) {
      if (addToBag.parentElement.children.length == 3) {
       addToBag.parentElement.removeChild(addToBag.parentElement.children[1])
       localStorage.setItem("aboutProduct",JSON.stringify(productCharacteristics));
+      localStorage.setItem("addTobag", JSON.stringify(addToBag));
      }
      localStorage.setItem("aboutProduct",JSON.stringify(productCharacteristics));
+     localStorage.setItem("addTobag", addToBag);
 
    }
    else {
