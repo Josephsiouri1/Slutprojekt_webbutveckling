@@ -25,3 +25,10 @@ searchInput.onkeydown = function(event) {
 searchInput.onmouseleave = function() {
         searchInput.value = ""    
 }
+
+let numberOfProducts = document.getElementById("product-counter");
+let shoppingCart = localStorage.getItem("shopping-cart");
+
+/*
+numberOfProducts.innerHTML = shoppingCart.length
+*/

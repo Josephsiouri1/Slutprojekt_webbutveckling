@@ -97,19 +97,12 @@ function newProductNumber(currentNumber) {
   return newNumber;
 }
 
-function stringToNumber(str) {
-  return Number(str.replace("SEK", ""));
-}
-let quantity = 0;
 
-addToBag.addEventListener("click", function (e) {
+addToBag.addEventListener("click", function (event) {
 
-    e.preventDefault();
+    event.preventDefault();
 
   productCharacteristics = {};
-  quantity += 1;
-  let color = document.getElementsByClassName("selectedColor")[0]
-  let size = document.getElementsByClassName("selectedSize")[0]
   
   let selectedDetails = new Array();
    
@@ -132,10 +125,6 @@ addToBag.addEventListener("click", function (e) {
                   productColorImg[
                     i
                   ].parentElement.parentElement.children[6].innerHTML;
-                productCharacteristics.quantity = quantity;
-                productCharacteristics.totalPrice =
-                  productCharacteristics.quantity *
-                  stringToNumber(productCharacteristics.price);
               }
               else {
                 selectedDetails.push(false)
@@ -153,10 +142,8 @@ addToBag.addEventListener("click", function (e) {
      if (addToBag.parentElement.children.length == 3) {
       addToBag.parentElement.removeChild(addToBag.parentElement.children[1])
       localStorage.setItem("aboutProduct",JSON.stringify(productCharacteristics));
-      localStorage.setItem("addTobag", JSON.stringify(addToBag));
      }
      localStorage.setItem("aboutProduct",JSON.stringify(productCharacteristics));
-     localStorage.setItem("addTobag", addToBag);
 
    }
    else {
@@ -166,7 +153,10 @@ addToBag.addEventListener("click", function (e) {
      addToBag.insertAdjacentHTML("afterend", `<p class="errorMessage">* Please select a color and a size to add to cart</p>`)
     }
    }
-
 });
-//offsetParent
 
+let shoppingCart = JSON.parse(localStorage.getItem("shopping-cart"));
+console.log(shoppingCart)
+/*
+numberOfProducts.innerHTML = shoppingCart.length
+*/
