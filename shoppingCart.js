@@ -11,19 +11,19 @@ searchInput.onmouseleave = function() {
         searchInput.value = ""    
 }
 
-let cart = new Array();
-
-let aboutProduct = JSON.parse(localStorage.getItem("aboutProduct"));
-
-cart.push(aboutProduct);
-
-console.log(cart[0]);
+let shoppingCart = JSON.parse(localStorage.getItem("aboutProducts"));
+/*
+for (let i = 0; i < shoppingCart.length; i++) {
+  shoppingCart[i].image.style.width = "50px";
+}
+*/
+console.log(localStorage.getItem("aboutProducts"));
 
 let table = document.getElementById("cart-container"); 
-
+table.classList.add("cart");
 let totalPrice = 0
 
-cart.forEach(function (aboutProduct) {
+shoppingCart.forEach(function (aboutProduct) {
     
   table.insertAdjacentHTML(
     "beforeend",
@@ -49,7 +49,7 @@ function stringToNumber(str) {
 
 let i = 0
 
-cart.forEach(function(aboutProduct) {
+shoppingCart.forEach(function(aboutProduct) {
     
     price = stringToNumber(aboutProduct.price)*Number(quantity[i].value)
 
@@ -70,18 +70,6 @@ table.insertAdjacentHTML(
     <td></td>
   </tr>`
 )
-table.insertAdjacentHTML(
-    "beforeend",
-    `<tr id="delete-all">
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td><a href="">Delete All</a></td>
-      <td></td>
-    </tr>`
-)
 
 let newTotalPrice = document.getElementById("total-price");
 
@@ -98,7 +86,7 @@ for (let i = 0; i < quantity.length; i++) {
     quantity[i].onkeydown = function(event) {
         event.preventDefault();
         if (event.key === "Enter") {
-            price = stringToNumber(aboutProduct.price)*Number(quantity[i].value)
+            price = stringToNumber(aboutProducts[i].price)*Number(quantity[i].value)
             productInfo[i].removeChild(productInfo[i].children[6]);
             productInfo[i].insertAdjacentHTML("beforeend", `<td>${price}kr</td>`)
             
@@ -118,18 +106,6 @@ for (let i = 0; i < quantity.length; i++) {
                   <td><strong>Total pris:</strong> ${totalPrice} kr</td>
                   <td></td>
                 </tr>`)
-                table.insertAdjacentHTML(
-                    "beforeend",
-                    `<tr id="delete-all">
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td><a href="">Delete All</a></td>
-                      <td></td>
-                    </tr>`
-                )
         }
     }
 }
@@ -139,22 +115,24 @@ for (let i = 0; i < quantity.length; i++) {
 
 
 let deleteAll = document.getElementById("delete-all");
-
+console.log(table.children)
 deleteAll.addEventListener("click", function(event) {
     event.preventDefault();
-    cart = cart.splice(0, 1);
+    for (let i = 1; i < table.children.length; i++) { //tar bort tabelens innehåll förutom rubrikerna.
+      table.removeChild(table.children[i]);
+    }
 })
 deleteAll.addEventListener("ontouchstart", function(event) {
     event.preventDefault();
-    cart = cart.splice(0, 1);
+    for (let i = 1; i < table.children.length; i++) { //tar bort tabelens innehåll förutom rubrikerna.
+      table.removeChild(table.children[i]);
+    }
 })
   
 
-
-
 let numberOfProducts = document.getElementById("product-counter");
 
-numberOfProducts.innerHTML = cart.length
+numberOfProducts.innerHTML = shoppingCart.length
 
 JSON.stringify(localStorage.setItem("shopping-cart", cart));
 

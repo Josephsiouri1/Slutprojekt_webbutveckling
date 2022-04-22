@@ -11,6 +11,11 @@ body {
     max-width: 100vw;
     overflow-x: hidden;
 }
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
 nav {
     display: flex;
     align-items: center;
@@ -18,10 +23,6 @@ nav {
     height: 10vh;
     box-shadow: 0vh 0vh 1vh;
     background-color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-
 }
 nav a img {
     width: 4vw;
@@ -31,8 +32,7 @@ nav a  {
     color: black;
     font-family: 'Fredoka', sans-serif;
     padding: 0 10px;
-} 
-                             
+}                     
 .right_icon {
     margin-right: 20vw;
 }
@@ -88,8 +88,7 @@ nav a p:hover::after {
     width: 100%;
     margin-top: 8px;
 }
-
-header section img {
+section img {
     display: flex;
     width: 90vw;
     margin-left: auto;
@@ -263,9 +262,26 @@ article figure a {
     align-items: center;
     border-radius: 15px;
 }
-footer {
+#delete-all {
+    color: white;
+    background-color: rgb(0, 125, 181);
+    font-size: x-large;
+    font-family: 'Fredoka';
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 50px;
+    height: 8vh;
+    margin: 3%;
+ }
+#footer {
+    display: flex;
+    flex-direction: row;
     margin-top: 5%;
+}
+
+#about-gymshark {
+    width: 50vw;
 }
 footer th a {
     text-decoration: none;
@@ -278,28 +294,42 @@ footer th {
 footer a:hover {
     color: rgba(110,110,110,0.5);
 }
-footer th img {
-    width: 15vw;
-} 
-footer th span {
+#footer span {
     font-family: 'Fredoka', sans-serif;
+    padding-left: 15%;
+}
+h4 {
+    padding-right: 50%;
 }
 iframe {
     width: 15vw;
     height: 20vh; 
     padding: 1% 1%;
+    padding-left: 35%;
+    margin-right: 30%;
 }
-th i {
+#footer a i {
     font-size: 2rem;
     color: black;
-    padding: 2%;
+    justify-content: center;
 }
-th i:hover {
+#footer i:hover {
     color: grey;
+}
+#more-about {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50vw;
+}
+#more-about img{
+   width: 15vw;
+   margin-left: 30%;
 }
 .find_us {
     font-size: 1.5rem;
     font-family: 'Fredoka', sans-serif;
+    padding-left: 40%;
+    margin-right: 45%;
 }
 .product-view {
     width: auto;
@@ -434,25 +464,15 @@ aside div span {
 }
 #shopping-bag {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    height: 60vh;
 }
 #shopping-bag h1 {
     font-family: 'Fredoka', sans-serif;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 6%;
     margin-top: 6%;
+    margin-bottom: 10%;
     font-size: 2rem;
-}
-#cart-container td a {
-   color: white;
-   background-color: rgb(0, 125, 181);
-   font-size: large;
-   font-family: 'Fredoka';
-   display: flex;
-   justify-content: space-around;
 }
 .errorMessage {
     color:red; 
@@ -468,6 +488,12 @@ aside div span {
     transform: scale(1.1);
 }
 
+#shopping-bag img {
+    width: 60%;
+}
+.table-head {
+    margin-bottom: 5%; 
+}/*dosent work*/
 
 /* TODO
 -fixa responsity... till alla sidor
@@ -483,4 +509,12 @@ aside div span {
 -problem submit login
 
 -only refresh want to be prevented from quantity
+
+-login for alla se com de---
+
+-en background img med hög upplösning 800kb----
+
+-fixa table "två delar" med flex box.
+
+-onödig repeterande css code ...... (gör en klass .styled-text)
 */

@@ -19,24 +19,30 @@
     <title>Your Shopping Cart</title>
   </head>
   <body>
-    <nav>
-      <a href="start.html"><img src="images/gymshark-logo.png" alt="logo" /></a>
-      <a class="left_icon" href=""><p>WOMENS</p></a>
-      <a href=""><p>MENS</p> </a>
-      <a class="right_icon" href=""><p>ACCESSORIES</p></a>
-      <div id="search-box">
-        <input type="text" id="search-input" placeholder="search" />
-        <a href=""> <i class="fa-solid fa-magnifying-glass fa-lg"></i> </a>
-      </div>
-      <a href=""><i class="fas fa-heart fa-lg"></i></a>
-      <a href="login.html"><i class="fas fa-user fa-lg"></i></a>
-      <a href="shoppingCart.html"><i class="fas fa-shopping-bag fa-lg"></i></a>
-      <div id="product-counter">0</div>
-    </nav>
+    <header>
+      <nav>
+        <a href="start.html"
+          ><img src="images/gymshark-logo.png" alt="logo"
+        /></a>
+        <a class="left_icon" href=""><p>WOMENS</p></a>
+        <a href=""><p>MENS</p> </a>
+        <a class="right_icon" href=""><p>ACCESSORIES</p></a>
+        <div id="search-box">
+          <input type="text" id="search-input" placeholder="search" />
+          <a href=""> <i class="fa-solid fa-magnifying-glass fa-lg"></i> </a>
+        </div>
+        <a href=""><i class="fas fa-heart fa-lg"></i></a>
+        <a href="login.html"><i class="fas fa-user fa-lg"></i></a>
+        <a href="shoppingCart.html"
+          ><i class="fas fa-shopping-bag fa-lg"></i
+        ></a>
+        <div id="product-counter">0</div>
+      </nav>
+    </header>
     <section id="shopping-bag">
       <h1>Shopping Cart</h1>
       <table id="cart-container">
-        <thead>
+        <thead class="table-head">
           <tr>
             <th>Remove</th>
             <th>Image</th>
@@ -47,8 +53,8 @@
             <th>Total</th>
           </tr>
         </thead>
-        <tbody></tbody>
       </table>
+      <a id="delete-all" href="">Delete All</a>
     </section>
     <footer>
       <div>

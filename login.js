@@ -14,10 +14,7 @@ searchInput.onmouseleave = function() {
 function validationEmail() {
     let email = document.getElementById("email").value;
     let textError = document.getElementById("text-error");
-    let pattern =  /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    if (email == "") {
-        textError.innerHTML = "";
-    }
+    let pattern =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
     if (email.match(pattern)) {
         textError.innerHTML = "Your Email Adress is Valid.";
@@ -36,9 +33,7 @@ function validationEmail() {
 function validationPassword() {
     let password = document.getElementById("password").value;
     let textError = document.getElementById("text-error");
-    if (password == "") {
-        textError.innerHTML = "";
-    }
+
     if (password.length < 6 || password.length > 20) {
         textError.innerHTML = "Your Password must be longer than 6 and shorter the 20 characters.";
         textError.style.color = "red";

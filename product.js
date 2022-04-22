@@ -97,6 +97,7 @@ function newProductNumber(currentNumber) {
   return newNumber;
 }
 
+let cart = new Array();
 
 addToBag.addEventListener("click", function (event) {
 
@@ -119,7 +120,7 @@ addToBag.addEventListener("click", function (event) {
                 productCharacteristics.name =
                   productColorImg[
                     i
-                  ].parentElement.parentElement.children[7].innerHTML.replace("\n","");
+                  ].parentElement.parentElement.children[7].innerHTML.replace("\n",""); //utgå från föräldern som är gemensam för alla produkter, det ska alltså fungera om det fanns andra produkter.
                 productCharacteristics.size = sizes[j].innerHTML;
                 productCharacteristics.price =
                   productColorImg[
@@ -141,13 +142,19 @@ addToBag.addEventListener("click", function (event) {
    if (selectedDetails.filter(x => x === true).length == 2) {
      if (addToBag.parentElement.children.length == 3) {
       addToBag.parentElement.removeChild(addToBag.parentElement.children[1])
-      localStorage.setItem("aboutProduct",JSON.stringify(productCharacteristics));
+      let cartInStorage = JSON.parse(localStorage.getItem("aboutProducts"))
+      console.log(cartInStorage)
+      if (cartInStorage === null) {
+        cart.push(productCharacteristics);
+        localStorage.setItem("aboutProduct", JSON.stringify(cart));
+      }
+      else {
+        cartInStorage.push(productCharacteristics);
+      }
      }
-     localStorage.setItem("aboutProduct",JSON.stringify(productCharacteristics));
-
-   }
+}
    else {
-    if (addToBag.parentElement.children.length == 3) {
+    if (addToBag.parentElement.children.length == 3) { //om det tre element så är error message med annars 2 barn.
     }
     else {
      addToBag.insertAdjacentHTML("afterend", `<p class="errorMessage">* Please select a color and a size to add to cart</p>`)
@@ -155,8 +162,9 @@ addToBag.addEventListener("click", function (event) {
    }
 });
 
-let shoppingCart = JSON.parse(localStorage.getItem("shopping-cart"));
-console.log(shoppingCart)
+//let shoppingCart = JSON.parse(localStorage.getItem("shopping-cart"));
+//console.log(shoppingCart)
+
 /*
 numberOfProducts.innerHTML = shoppingCart.length
 */

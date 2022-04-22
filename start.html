@@ -38,22 +38,22 @@
         ></a>
         <div id="product-counter">0</div>
       </nav>
-      <section>
-        <a href="">
-          <img
-            id="intro_image"
-            src="images/introduction_image.webp"
-            alt="introduserat bild till butiken"
-        /></a>
-        <a href=""
-          ><img
-            id="text_image"
-            src="images/best_sellers.webp"
-            alt="best_sellers"
-          />
-        </a>
-      </section>
     </header>
+    <section>
+      <a href="">
+        <img
+          id="intro_image"
+          src="images/introduction_image.webp"
+          alt="introduserat bild till butiken"
+      /></a>
+      <a href=""
+        ><img
+          id="text_image"
+          src="images/best_sellers.webp"
+          alt="best_sellers"
+        />
+      </a>
+    </section>
     <article>
       <aside>
         <p class="grey_text">MENS</p>
@@ -156,31 +156,19 @@
       </section>
     </article>
     <footer>
-      <div>
-        <table>
+      <div id="footer">
+        <table id="about-gymshark">
           <thead>
             <tr>
               <th>HELP</th>
               <th>MY ACCOUNT</th>
               <th>PAGES</th>
-              <th>MORE ABOUT GYMSHARK</th>
             </tr>
           </thead>
           <tr>
             <th><a href="">FAQ</a></th>
             <th><a href="login.html">Login</a></th>
             <th><a href="">Gymshark Central</a></th>
-            <th>
-              <a href=""> <img src="images/central.jpg" alt="" /> </a>
-            </th>
-            <th>
-              <a href=""> <img src="images/newsletter.jpg" alt="" /> </a>
-            </th>
-            <th>
-              <a href="">
-                <img src="images/new_training_app_footer.jpg" alt="" />
-              </a>
-            </th>
           </tr>
           <tr>
             <th>
@@ -189,57 +177,53 @@
             <th>
               <a href="">Register</a>
             </th>
-            <th>
-              <a href="">About Us</a>
-            </th>
-            <th>
-              <span>BLOG</span>
-            </th>
-            <th><span>NEWSLETTER</span></th>
-            <th><span>GYMSHARK TRAINING</span></th>
+            <th><a href="">Careers</a></th>
           </tr>
           <tr>
             <th><a href="">Returns Policy</a></th>
             <th></th>
-            <th><a href="">Careers</a></th>
-            <th></th>
-            <th>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2028.5772564619479!2d18.061532015806847!3d59.44012488169777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9b937e97af13%3A0xef984bf2bc386cb7!2s%C3%85va%20gymnasium!5e0!3m2!1ssv!2sse!4v1648047817403!5m2!1ssv!2sse"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-              ></iframe>
-            </th>
+            <th><a href="">Student Beans</a></th>
           </tr>
           <tr>
             <th><a href="">Make A return</a></th>
             <th></th>
-            <th><a href="">Student Beans</a></th>
-            <th></th>
-            <th class="find_us">Find Us</th>
+            <th><a href="">Transparency Report</a></th>
           </tr>
           <tr>
             <th><a href="">Orders</a></th>
             <th></th>
-            <th><a href="">Transparency Report</a></th>
           </tr>
           <tr>
             <th><a href="">Submit a Fake</a></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th>
-              <a href=""> <i class="fab fa-facebook"></i></a>
-              <a href=""> <i class="fab fa-discord"></i> </a>
-              <a href=""> <i class="fab fa-pinterest"></i> </a>
-              <a href=""> <i class="fab fa-youtube"></i> </a>
-              <a href=""> <i class="fab fa-instagram"></i> </a>
-              <a href=""> <i class="fab fa-twitter"></i> </a>
-              <a href=""><i class="fa-brands fa-tiktok"></i></a>
-            </th>
           </tr>
         </table>
+        <div id="more-about">
+          <h4>MORE ABOUT GYMSHARK</h4>
+          <a href=""> <img src="images/central.jpg" alt="" /> </a>
+          <a href=""> <img src="images/newsletter.jpg" alt="" /> </a>
+          <!---kanske inte bäst att använda div då man vill bredvid-->
+          <a href="">
+            <img src="images/new_training_app_footer.jpg" alt="" />
+          </a>
+          <span>BLOG</span>
+          <span>NEWSLETTER</span>
+          <span>GYMSHARK TRAINING</span>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d260381.20753024227!2d17.863040584432284!3d59.34583876634308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d6e709c19a9%3A0xbce9c957816a1a05!2sGolden%20Athlete!5e0!3m2!1ssv!2sse!4v1650480224423!5m2!1ssv!2sse"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <p class="find_us">FIND US</p>
+          <a href=""> <i class="fab fa-facebook"></i></a>
+          <a href=""> <i class="fab fa-discord"></i> </a>
+          <a href=""> <i class="fab fa-pinterest"></i> </a>
+          <a href=""> <i class="fab fa-youtube"></i> </a>
+          <a href=""> <i class="fab fa-instagram"></i> </a>
+          <a href=""> <i class="fab fa-twitter"></i> </a>
+          <a href=""> <i class="fa-brands fa-tiktok"></i></a>
+        </div>
       </div>
     </footer>
     <script src="start.js"></script>
