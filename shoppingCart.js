@@ -1,4 +1,3 @@
-
 let searchInput = document.getElementById("search-input");
 let searchBox = document.getElementById("search-box");
 
@@ -12,15 +11,18 @@ searchInput.onmouseleave = function() {
 }
 
 let shoppingCart = JSON.parse(localStorage.getItem("aboutProducts"));
+
 /*
 for (let i = 0; i < shoppingCart.length; i++) {
   shoppingCart[i].image.style.width = "50px";
 }
 */
-console.log(localStorage.getItem("aboutProducts"));
+console.log(shoppingCart);
 
 let table = document.getElementById("cart-container"); 
+
 table.classList.add("cart");
+
 let totalPrice = 0
 
 shoppingCart.forEach(function (aboutProduct) {
@@ -38,7 +40,6 @@ shoppingCart.forEach(function (aboutProduct) {
     </form></td>
     </tr> 
     `)
-
 })
 let quantity = document.getElementsByClassName("quantity");
 let productInfo = document.getElementsByClassName("product-info");
@@ -86,16 +87,19 @@ for (let i = 0; i < quantity.length; i++) {
     quantity[i].onkeydown = function(event) {
         event.preventDefault();
         if (event.key === "Enter") {
-            price = stringToNumber(aboutProducts[i].price)*Number(quantity[i].value)
+          shoppingCart.forEach(function(aboutProduct) {
+            newprice = stringToNumber(aboutProduct.price)*Number(quantity[i].value)
             productInfo[i].removeChild(productInfo[i].children[6]);
-            productInfo[i].insertAdjacentHTML("beforeend", `<td>${price}kr</td>`)
+            productInfo[i].insertAdjacentHTML("beforeend", `<td>${newprice}kr</td>`)
+          })
             
             removeById("total-price")
-            removeById("delete-all")
+
             totalPrice = 0
-            cart.forEach(function() {
-                totalPrice = totalPrice + price
+            shoppingCart.forEach(function() {
+                totalPrice = totalPrice + newprice
             })
+
             table.insertAdjacentHTML(
                 "beforeend",
                 `<tr id="total-price">
@@ -112,28 +116,42 @@ for (let i = 0; i < quantity.length; i++) {
 
 
 
-
+let numberOfProducts = document.getElementById("product-counter");
 
 let deleteAll = document.getElementById("delete-all");
-console.log(table.children)
+
 deleteAll.addEventListener("click", function(event) {
-    event.preventDefault();
-    for (let i = 1; i < table.children.length; i++) { //tar bort tabelens innehåll förutom rubrikerna.
+    event.preventDefault();      
+    i = 1;
+    while (i < table.children.length) {  //tar bort tabelens innehåll förutom rubrikerna.
       table.removeChild(table.children[i]);
+      i++
     }
+    shoppingCart = [];
+    numberOfProducts.innerHTML = shoppingCart.length
+    console.log(shoppingCart);
 })
-deleteAll.addEventListener("ontouchstart", function(event) {
+deleteAll.addEventListener("ontouchstart", function(event) { //fråga om den behövs
     event.preventDefault();
     for (let i = 1; i < table.children.length; i++) { //tar bort tabelens innehåll förutom rubrikerna.
       table.removeChild(table.children[i]);
     }
+    shoppingCart = [];
+    numberOfProducts.innerHTML = shoppingCart.length
 })
   
 
-let numberOfProducts = document.getElementById("product-counter");
-
 numberOfProducts.innerHTML = shoppingCart.length
 
-JSON.stringify(localStorage.setItem("shopping-cart", cart));
 
-console.log(cart);
+localStorage.setItem("shopping-cart", JSON.stringify(numberOfProducts));
+
+console.log(numberOfProducts);
+
+/*
+let addToBag = localStorage.getItem("add-button");
+console.log(addToBag);
+addToBag.addEventListener("click", function() {
+  main();
+})
+*/

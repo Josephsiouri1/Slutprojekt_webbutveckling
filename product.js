@@ -101,7 +101,7 @@ let cart = new Array();
 
 addToBag.addEventListener("click", function (event) {
 
-    event.preventDefault();
+  event.preventDefault();
 
   productCharacteristics = {};
   
@@ -137,7 +137,6 @@ addToBag.addEventListener("click", function (event) {
       else {
       selectedDetails.push(false)
     }
-    
   }
    if (selectedDetails.filter(x => x === true).length == 2) {
      if (addToBag.parentElement.children.length == 3) {
@@ -146,10 +145,32 @@ addToBag.addEventListener("click", function (event) {
       console.log(cartInStorage)
       if (cartInStorage === null) {
         cart.push(productCharacteristics);
-        localStorage.setItem("aboutProduct", JSON.stringify(cart));
+        cartInStorage = cart;
+        localStorage.setItem("aboutProducts", JSON.stringify(cartInStorage));
       }
       else {
-        cartInStorage.push(productCharacteristics);
+        function sameProduct(cartInStorage, productCharacteristics) {
+          for (let i = 0; i < cartInStorage.length; i++) {
+            let checkList = [];
+            if (cartInStorage[i].size === productCharacteristics.size && cartInStorage[i].image === productCharacteristics.image) {
+              checkList.push(false);
+            }
+            else {
+              checkList.push(true);
+            }
+          }
+          if (checkList.includes(false)) { //kontrollerar om det finns en produkt som uppfyller samma egenskaper som den nyvalda produktern.
+            return (false)
+          }
+          else {
+            return (true)
+          }
+         }
+        let condition = sameProduct(cartInStorage, productCharacteristics); //om det valda produkten finns redan i listan behövs den inte läggas till igen.
+        if (condition) {
+          cartInStorage.push(productCharacteristics);
+          localStorage.setItem("aboutProducts", JSON.stringify(cartInStorage));
+        }
       }
      }
 }
