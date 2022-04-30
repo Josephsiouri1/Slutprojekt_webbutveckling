@@ -120,27 +120,27 @@ for (let i = 0; i < quantity.length; i++) {
 let numberOfProducts = document.getElementById("product-counter");
 
 let deleteAll = document.getElementById("delete-all");
-
 deleteAll.addEventListener("click", function (event) {
   event.preventDefault();
-  i = 1;
-  while (i < table.children.length) {
-    //tar bort tabelens innehåll förutom rubrikerna.
-    table.removeChild(table.children[i]);
-    i++;
-  }
-  shoppingCart = null;
-  numberOfProducts.innerHTML = shoppingCart.length;
-  console.log(shoppingCart);
-});
-deleteAll.addEventListener("ontouchstart", function (event) {
-  //fråga om den behövs
-  event.preventDefault();
+
   for (let i = 1; i < table.children.length; i++) {
     //tar bort tabelens innehåll förutom rubrikerna.
     table.removeChild(table.children[i]);
   }
+
   shoppingCart = [];
+  localStorage.removeItem("about-products");
+  numberOfProducts.innerHTML = shoppingCart.length;
+});
+deleteAll.addEventListener("ontouchstart", function (event) {
+  //fråga om den behövs-----------
+  event.preventDefault();
+  for (let i = 1; i <= table.children.length; i++) {
+    //tar bort tabelens innehåll förutom rubrikerna.
+    table.removeChild(table.children[i]);
+  }
+  shoppingCart = [];
+  localStorage.removeItem("about-products");
   numberOfProducts.innerHTML = shoppingCart.length;
 });
 

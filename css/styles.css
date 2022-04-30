@@ -514,8 +514,14 @@ aside div span {
     nav a img {
         width: 10vw;
     }
+    article section img {
+        width: 30vw;
+    }
     #login-box {
         width: 60vw;
+    }
+    .login-background {
+        height: 100vh;
     }
 }
 @media screen and (max-width: 480px) {
@@ -525,6 +531,13 @@ aside div span {
     header nav {
         flex-direction: column;
         height: 22vh;
+    }
+    #search-box:hover input {
+        width: 20vw;
+        transition: all 0.8s;
+    }
+    article section img {
+        width: 40vw;
     }
     aside div img {
         cursor: pointer;
@@ -541,6 +554,9 @@ aside div span {
     }
     #login-box {
         width: 100vw;
+    }
+    #shopping-bag img {
+        width: 30vw;
     }
 }
 
