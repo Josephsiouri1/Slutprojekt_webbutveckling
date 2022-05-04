@@ -28,6 +28,6 @@ searchInput.onmouseleave = function () {
 
 let numberOfProducts = document.getElementById("product-counter");
 
-let shoppingCart = JSON.parse(localStorage.getItem("shopping-cart"));
+let shoppingCart = JSON.parse(localStorage.getItem("aboutProducts"));
 
 numberOfProducts.innerHTML = shoppingCart.length;

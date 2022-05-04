@@ -10,25 +10,28 @@ searchInput.onmouseleave = function () {
   searchInput.value = "";
 };
 
-let shoppingCart = JSON.parse(localStorage.getItem("aboutProducts"));
+let numberOfProducts = document.getElementById("product-counter");
 
-/*
-for (let i = 0; i < shoppingCart.length; i++) {
-  shoppingCart[i].image.style.width = "50px";
-}
-*/
-console.log(shoppingCart);
+function renderCart() {
+  let shoppingCart = JSON.parse(localStorage.getItem("aboutProducts"));
 
-let table = document.getElementById("cart-container");
+  console.log(shoppingCart);
 
-table.classList.add("cart");
+  let table = document.getElementById("cart-container");
 
-let totalPrice = 0;
+  for (let i = table.children.length - 1; i > 0; i--) {
+    //tar bort tabelens innehåll förutom rubrikerna och totala priset sätts till 0kr.
+    table.children[i].remove();
+  }
 
-shoppingCart.forEach(function (aboutProduct) {
-  table.insertAdjacentHTML(
-    "beforeend",
-    `<tr class="product-info">
+  table.classList.add("cart");
+
+  let totalPrice = 0;
+
+  shoppingCart.forEach(function (aboutProduct) {
+    table.insertAdjacentHTML(
+      "beforeend",
+      `<tr class="product-info">
     <td><a href=""><i class="fa-solid fa-circle-x"></i></a></td>
       <td><img class="product-image" src="${aboutProduct.image}"></td>
       <td>${aboutProduct.name}</td>
@@ -39,28 +42,28 @@ shoppingCart.forEach(function (aboutProduct) {
     </form></td>
     </tr> 
     `
-  );
-});
-let quantity = document.getElementsByClassName("quantity");
-let productInfo = document.getElementsByClassName("product-info");
+    );
+  });
+  let quantity = document.getElementsByClassName("quantity");
+  let productInfo = document.getElementsByClassName("product-info");
 
-function stringToNumber(str) {
-  return Number(str.replace("SEK", ""));
-}
+  function stringToNumber(str) {
+    return Number(str.replace("SEK", ""));
+  }
 
-let i = 0;
+  let i = 0;
 
-shoppingCart.forEach(function (aboutProduct) {
-  price = stringToNumber(aboutProduct.price) * Number(quantity[i].value);
+  shoppingCart.forEach(function (aboutProduct) {
+    price = stringToNumber(aboutProduct.price) * Number(quantity[i].value);
 
-  productInfo[i].insertAdjacentHTML("beforeend", `<td>${price}kr</td>`);
-  totalPrice = totalPrice + price;
-  i += 1;
-});
+    productInfo[i].insertAdjacentHTML("beforeend", `<td>${price}kr</td>`);
+    totalPrice = totalPrice + price;
+    i += 1;
+  });
 
-table.insertAdjacentHTML(
-  "beforeend",
-  `<tr id="total-price">
+  table.insertAdjacentHTML(
+    "beforeend",
+    `<tr id="total-price">
     <td></td>
     <td></td>
     <td></td>
@@ -68,43 +71,41 @@ table.insertAdjacentHTML(
     <td><strong>Total pris:</strong> ${totalPrice} kr</td>
     <td></td>
   </tr>`
-);
+  );
 
-let newTotalPrice = document.getElementById("total-price");
+  function removeById(id) {
+    var element = document.getElementById(id);
 
-function removeById(id) {
-  var element = document.getElementById(id);
-
-  // A bit of robustness helps...
-  if (element && element.parentNode) {
-    element.parentNode.removeChild(element);
+    // A bit of robustness helps...
+    if (element && element.parentNode) {
+      element.parentNode.removeChild(element);
+    }
   }
-}
 
-for (let i = 0; i < quantity.length; i++) {
-  quantity[i].onkeydown = function (event) {
-    event.preventDefault();
-    if (event.key === "Enter") {
-      shoppingCart.forEach(function (aboutProduct) {
-        newprice =
-          stringToNumber(aboutProduct.price) * Number(quantity[i].value);
-        productInfo[i].removeChild(productInfo[i].children[6]);
-        productInfo[i].insertAdjacentHTML(
+  for (let i = 0; i < quantity.length; i++) {
+    quantity[i].onkeydown = function (event) {
+      event.preventDefault();
+      if (event.key === "Enter") {
+        shoppingCart.forEach(function (aboutProduct) {
+          newprice =
+            stringToNumber(aboutProduct.price) * Number(quantity[i].value);
+          productInfo[i].removeChild(productInfo[i].children[6]);
+          productInfo[i].insertAdjacentHTML(
+            "beforeend",
+            `<td>${newprice}kr</td>`
+          );
+        });
+
+        removeById("total-price");
+
+        totalPrice = 0;
+        shoppingCart.forEach(function () {
+          totalPrice = totalPrice + newprice;
+        });
+
+        table.insertAdjacentHTML(
           "beforeend",
-          `<td>${newprice}kr</td>`
-        );
-      });
-
-      removeById("total-price");
-
-      totalPrice = 0;
-      shoppingCart.forEach(function () {
-        totalPrice = totalPrice + newprice;
-      });
-
-      table.insertAdjacentHTML(
-        "beforeend",
-        `<tr id="total-price">
+          `<tr id="total-price">
                   <td></td>
                   <td></td>
                   <td></td>
@@ -112,38 +113,22 @@ for (let i = 0; i < quantity.length; i++) {
                   <td><strong>Total pris:</strong> ${totalPrice} kr</td>
                   <td></td>
                 </tr>`
-      );
-    }
-  };
+        );
+      }
+    };
+  }
+  numberOfProducts.innerHTML = shoppingCart.length;
 }
 
-let numberOfProducts = document.getElementById("product-counter");
+renderCart();
 
 let deleteAll = document.getElementById("delete-all");
 deleteAll.addEventListener("click", function (event) {
   event.preventDefault();
 
-  for (let i = 1; i < table.children.length; i++) {
-    //tar bort tabelens innehåll förutom rubrikerna.
-    table.removeChild(table.children[i]);
-  }
-
-  shoppingCart = [];
-  localStorage.removeItem("about-products");
-  numberOfProducts.innerHTML = shoppingCart.length;
-});
-deleteAll.addEventListener("ontouchstart", function (event) {
-  //fråga om den behövs-----------
-  event.preventDefault();
-  for (let i = 1; i <= table.children.length; i++) {
-    //tar bort tabelens innehåll förutom rubrikerna.
-    table.removeChild(table.children[i]);
-  }
-  shoppingCart = [];
-  localStorage.removeItem("about-products");
-  numberOfProducts.innerHTML = shoppingCart.length;
+  localStorage.setItem("aboutProducts", "[]");
+  renderCart();
+  // numberOfProducts.innerHTML = shoppingCart.length;
 });
 
-numberOfProducts.innerHTML = shoppingCart.length;
-
-localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));
+// localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));

@@ -183,7 +183,7 @@ article figure a {
     font-family:'Fredoka';
     justify-content: center;
     align-items: center;
-    width: 10vw;
+    width: auto;
     height: 6vh;
     border-radius: 20px;
 }
@@ -219,7 +219,7 @@ article figure a {
 .background_colors p {
     color: aliceblue; 
     font-size: 2rem;
-    font-family: 'Abril Fatface'
+    font-family: 'Abril Fatface';
 }
 .background_colors a {
     display: flex;
@@ -231,7 +231,7 @@ article figure a {
     font-family: var(--font-text);
     height: 5vh;
     border-radius: 12px;
-    width: 7vw;
+    width: auto;
     align-items: center;
     justify-content: center;
 }
@@ -250,7 +250,7 @@ article figure a {
     margin-left: 5%;
     color: black;
     background-color: white;
-    width: 8vw;
+    width: auto;
     height: 5vh;
     justify-content: center;
     align-items: center;
@@ -360,6 +360,7 @@ aside div span {
     cursor: pointer;
     background-color: white;
     transition: 0.25s;
+    width: auto;
 }
 .size:hover {
     background-color: black;
@@ -378,7 +379,7 @@ aside div span {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30vw;
+    width: auto;
     height: 6vh;
     border-radius: 20px;
     margin: 6%;
@@ -502,11 +503,16 @@ aside div span {
         margin-right: auto;
     }
     aside div img {
-        cursor: pointer;
         width: 12vw;
     }
     #login-box {
         width: 50vw;
+    }
+    .big_text {
+        font-size: 1.5rem;
+    }
+    article aside a {
+        margin-left: 70vw;
     }
   }
 
@@ -522,6 +528,13 @@ aside div span {
     }
     .login-background {
         height: 100vh;
+    }
+    #more-about a{
+        width: 20vw;
+    }
+    #footer span {
+        padding-left: 14%;
+        font-size: 15px;
     }
 }
 @media screen and (max-width: 480px) {
@@ -540,7 +553,6 @@ aside div span {
         width: 40vw;
     }
     aside div img {
-        cursor: pointer;
         width: 15vw;
     }
     .product-viewfront {
@@ -558,18 +570,30 @@ aside div span {
     #shopping-bag img {
         width: 30vw;
     }
+    #more-about {
+        width: 100vw;
+    }
+    #more-about img {
+        padding-left: 20px;
+        width: 25vw;
+    }
+    .background_colors p {
+        font-size: 1.5rem;
+    }
+  
+    iframe {
+        padding-left: 3%;
+        margin: 3px;
+    }
+    #footer span {
+        padding-left: 3%;
+    }
 }
 
 /* TODO
 -fixa responsity... till alla sidor
 
--gör en sida med en tabell till kundvagnen
-
 -beskriv bilder
-
--fel med login background vid mindre skärm
-
--problem submit login
 
 -only refresh want to be prevented from quantity
 
@@ -577,9 +601,7 @@ aside div span {
 
 -en background img med hög upplösning 800kb----
 
--fixa table "två delar" med flex box.
-
--onödig repeterande css code ...... (gör en klass .styled-text)
+-onödig repeterande css code ......
 
 -icons visas inte i shoping cart sida...
 */
