@@ -15,8 +15,6 @@ let numberOfProducts = document.getElementById("product-counter");
 function renderCart() {
   let shoppingCart = JSON.parse(localStorage.getItem("aboutProducts"));
 
-  console.log(shoppingCart);
-
   let table = document.getElementById("cart-container");
 
   for (let i = table.children.length - 1; i > 0; i--) {
@@ -32,7 +30,6 @@ function renderCart() {
     table.insertAdjacentHTML(
       "beforeend",
       `<tr class="product-info">
-    <td><a href=""><i class="fa-solid fa-circle-x"></i></a></td>
       <td><img class="product-image" src="${aboutProduct.image}"></td>
       <td>${aboutProduct.name}</td>
       <td>${aboutProduct.size}</td>
