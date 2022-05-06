@@ -14,8 +14,9 @@ function validationEmail() {
   let email = document.getElementById("email").value;
   let textError = document.getElementById("text-error");
   let mailformat =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  if (email.match(mailformat)) {
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  let regexp = RegExp(mailformat);
+  if (email.match(regexp)) {
     textError.innerHTML = "Your Email Adress is Valid.";
     textError.style.color = "green";
     return false;
