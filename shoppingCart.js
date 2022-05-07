@@ -82,6 +82,7 @@ function renderCart() {
   for (let i = 0; i < quantity.length; i++) {
     quantity[i].onkeydown = function (event) {
       event.preventDefault();
+      console.log(event.key);
       if (event.key === "Enter") {
         shoppingCart.forEach(function (aboutProduct) {
           newprice =
@@ -89,7 +90,7 @@ function renderCart() {
           productInfo[i].removeChild(productInfo[i].children[6]);
           productInfo[i].insertAdjacentHTML(
             "beforeend",
-            `<td>${newprice}kr</td>`
+            `<td>${newprice} kr</td>`
           );
         });
 
