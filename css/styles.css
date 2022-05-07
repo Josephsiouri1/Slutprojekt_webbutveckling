@@ -4,7 +4,7 @@
     margin: 0%;
 }
 :root {
-    --font-text: 'Fredoka', sans-serif;;
+    --font-text: 'Fredoka', sans-serif;
 }
 body {
     height: 100vh;
@@ -33,7 +33,6 @@ nav a img {
 .nav-links {
  display: flex;
 }
-
 nav a  {
     color: black;
     font-family: var(--font-text);
@@ -79,7 +78,7 @@ nav a p::after {
     width: 0;
     height: 3px;
     background-color: black;
-    transition:  0.3s linear;
+    transition: 0.3s linear;
     margin: auto;
     display: block;
 }
@@ -167,7 +166,6 @@ section a p {
     align-items: center;
     flex-direction: column;
 } 
-
 .the_essentials_text1 {
     font-size: 3rem;
 }
@@ -262,7 +260,7 @@ article figure a {
     font-size: x-large;
     font-family: var(--font-text);
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     border-radius: 50px;
     height: 8vh;
@@ -290,7 +288,6 @@ footer a:hover {
     font-family: var(--font-text);
     padding-left: 14%;
 }
-
 iframe {
     min-width: 5vw;
     padding: 1% 1%;
@@ -424,7 +421,7 @@ aside div span {
     border-radius: 24px;
     transition: 0.25s;
 }
-#login-box input[type="email"]:focus, #login-box input[type="password"]:focus {
+#login-box input[type="email"]:focus, #login-box input[type="password"]:focus { 
     width: 270px;
     border-color: rgb(240, 255, 255);
 }
@@ -543,7 +540,6 @@ aside div span {
     }
     #search-box:hover input {
         width: 20vw;
-        transition: all 0.8s;
     }
     article section img {
         width: 40vw;
