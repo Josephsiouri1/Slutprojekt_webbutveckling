@@ -77,7 +77,6 @@ function renderCart() {
       element.parentNode.removeChild(element);
     }
   }
-
   for (let i = 0; i < quantity.length; i++) {
     quantity[i].onkeydown = function (event) {
       event.preventDefault();
