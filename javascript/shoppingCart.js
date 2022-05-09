@@ -69,7 +69,6 @@ function renderCart() {
     <td></td>
   </tr>`
   );
-
   function removeById(id) {
     var element = document.getElementById(id);
 
@@ -82,12 +81,11 @@ function renderCart() {
   for (let i = 0; i < quantity.length; i++) {
     quantity[i].onkeydown = function (event) {
       event.preventDefault();
-      console.log(event.key);
       if (event.key === "Enter") {
         shoppingCart.forEach(function (aboutProduct) {
           newprice =
             stringToNumber(aboutProduct.price) * Number(quantity[i].value);
-          productInfo[i].removeChild(productInfo[i].children[6]);
+          productInfo[i].removeChild(productInfo[i].children[5]); //tar bort det sista barnet vilket är det gamla priset.
           productInfo[i].insertAdjacentHTML(
             "beforeend",
             `<td>${newprice} kr</td>`
@@ -96,10 +94,19 @@ function renderCart() {
 
         removeById("total-price");
 
+        let prices = [];
+
+        for (let i = 0; i < productInfo.length; i++) {
+          prices.push(
+            Number(productInfo[i].children[5].innerHTML.replace("kr", ""))
+          ); //lägger till alla priser till en lista genom att omvanda tabell innehållet till en siffra.
+        }
+
         totalPrice = 0;
-        shoppingCart.forEach(function () {
-          totalPrice = totalPrice + newprice;
-        });
+
+        for (let i = 0; i < prices.length; i++) {
+          totalPrice = totalPrice + prices[i];
+        }
 
         table.insertAdjacentHTML(
           "beforeend",
@@ -126,7 +133,4 @@ deleteAll.addEventListener("click", function (event) {
 
   localStorage.setItem("aboutProducts", "[]");
   renderCart();
-  // numberOfProducts.innerHTML = shoppingCart.length;
 });
-
-// localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));

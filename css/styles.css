@@ -254,7 +254,11 @@ article figure a {
     align-items: center;
     border-radius: 15px;
 }
-#delete-all {
+.delete-buy-buttons {
+    display: flex;
+    flex-direction: row;
+}
+ .delete-buy-product {
     color: white;
     background-color: rgb(0, 125, 181);
     font-size: x-large;
@@ -265,6 +269,10 @@ article figure a {
     border-radius: 50px;
     height: 8vh;
     margin: 3%;
+    width: 50vw;
+ }
+ #checkout {
+     background-color: gray;
  }
 #footer {
     display: flex;
