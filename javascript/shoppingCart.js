@@ -13,6 +13,7 @@ searchInput.onmouseleave = function () {
 let numberOfProducts = document.getElementById("product-counter");
 
 function renderCart() {
+  //körs varje gång sidan laddas och när man trycker på delete all knappen för att ändra ifall produkter i tabellen togs bort.
   let shoppingCart = JSON.parse(localStorage.getItem("aboutProducts"));
 
   let table = document.getElementById("cart-container");
@@ -45,15 +46,17 @@ function renderCart() {
   let productInfo = document.getElementsByClassName("product-info");
 
   function stringToNumber(str) {
+    //tar emot texten på priset och byter ut till bara siffran.
     return Number(str.replace("SEK", ""));
   }
 
   let i = 0;
 
   shoppingCart.forEach(function (aboutProduct) {
+    //beräkna priset på enskild produkt beroende på antal kvantitet på produkten.
     price = stringToNumber(aboutProduct.price) * Number(quantity[i].value);
 
-    productInfo[i].insertAdjacentHTML("beforeend", `<td>${price}kr</td>`);
+    productInfo[i].insertAdjacentHTML("beforeend", `<td>${price}kr</td>`); //adderar till det totala priset på produkterna.
     totalPrice = totalPrice + price;
     i += 1;
   });
@@ -78,6 +81,7 @@ function renderCart() {
     }
   }
   for (let i = 0; i < quantity.length; i++) {
+    //vid ändring av kvantitet av produkterna så tas bort de gamla värderna och nya värden skrivs ut.
     quantity[i].onkeydown = function (event) {
       event.preventDefault();
       if (event.key === "Enter") {
@@ -91,7 +95,7 @@ function renderCart() {
           );
         });
 
-        removeById("total-price");
+        removeById("total-price"); //tar bort gamla värdet
 
         let prices = [];
 
@@ -108,6 +112,7 @@ function renderCart() {
         }
 
         table.insertAdjacentHTML(
+          //skriver ut det nya värdet
           "beforeend",
           `<tr id="total-price">
                   <td></td>
@@ -130,6 +135,6 @@ let deleteAll = document.getElementById("delete-all");
 deleteAll.addEventListener("click", function (event) {
   event.preventDefault();
 
-  localStorage.setItem("aboutProducts", "[]");
+  localStorage.setItem("aboutProducts", "[]"); //allt i produkt listan tas bort då man trycker på delete all.
   renderCart();
 });
