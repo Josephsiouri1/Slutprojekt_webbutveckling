@@ -1,6 +1,6 @@
 let intro_bild = document.getElementById("intro_image");
 let text_bild = document.getElementById("text_image");
-
+//de eventlistnarna gör att om musen ligger över en av de så blir båda större och när det lämnar blir de mindre.
 intro_bild.addEventListener("mouseover", function () {
   intro_bild.style.width = "100vw";
 });
