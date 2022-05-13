@@ -36,6 +36,7 @@ productColorImg[0].onmousedown = function () {
   productColor[0].innerHTML = "Black/Charcoal Grey";
 
   if (productColorImg[0].classList.contains("selectedColor")) {
+    //kontrollerar om tagen redan har klassen "selectedColor" eller inte för att lägga till den när man klickar.
   } else {
     productColorImg[0].classList.add("selectedColor");
   }
@@ -46,6 +47,7 @@ productColorImg[0].onmousedown = function () {
   productColorImg[1].style.border = "solid 0px black";
 
   for (let i = 0; i < productImg.length; i++) {
+    //går igenom svart färg listan i ordning för att byta tagen för varje bild.
     productImg[i].attributes[1].nodeValue = blackColor[i];
   }
 };
@@ -65,6 +67,7 @@ productColorImg[1].onmousedown = function () {
   productColorImg[0].style.border = "solid 0px black";
 
   for (let i = 0; i < productImg.length; i++) {
+    //går igenom svart färg listan i ordning för att byta tagen för varje bild.
     productImg[i].attributes[1].nodeValue = greenColor[i];
   }
 };
@@ -74,6 +77,7 @@ let numberOfProducts = document.getElementById("product-counter");
 let sizes = document.getElementsByClassName("size");
 
 for (let i = 0; i < sizes.length; i++) {
+  //när en storlek tag är valt så tas bort klassen "size" från andra taggar.
   sizes[i].addEventListener("mousedown", function () {
     for (let i = 0; i < sizes.length; i++) {
       if (sizes[i].classList.contains("selectedSize")) {
@@ -85,6 +89,7 @@ for (let i = 0; i < sizes.length; i++) {
 }
 
 function newProductNumber(currentNumber) {
+  //ändrar på siffran på antalet produkter genom att först omvandla från string to number.
   number = Number(currentNumber);
 
   number += 1;
@@ -94,16 +99,15 @@ function newProductNumber(currentNumber) {
   return newNumber;
 }
 
-let cart = new Array();
+let cart = new Array(); //den första listan som skickas till shopping cart sidan.
 
 addToBag.addEventListener("click", function (event) {
-  let shoppingCart = JSON.parse(localStorage.getItem("shopping-cart"));
-  console.log(shoppingCart);
   event.preventDefault();
 
   productCharacteristics = {};
+  //tom objekt som fylls med produkt egenskaper som färg, namn, storlek.. och sedan adderas till listan som i sin tur skickas till andra sidan.
 
-  let selectedDetails = new Array();
+  let selectedDetails = new Array(); //kontrollerar om alla altenativ som bör vara valda innan att lägga till är valda.
 
   for (let i = 0; i < productColorImg.length; i++) {
     if (productColorImg[i].classList.contains("selectedColor")) {
@@ -133,6 +137,7 @@ addToBag.addEventListener("click", function (event) {
     }
   }
   if (selectedDetails.filter((x) => x === true).length == 2) {
+    //om det två "true" betyder det att både färgen och storleken är valda vilken kan nu skicka vidare listan.
     removeErrorMessage();
     let cartInStorage = JSON.parse(localStorage.getItem("aboutProducts"));
     if (cartInStorage === null) {
@@ -150,8 +155,8 @@ addToBag.addEventListener("click", function (event) {
       }
     }
   } else {
-    if (addToBag.parentElement.children.length == 3) {
-      //om det tre element så är error message med annars 2 barn.
+    if (removeErrorMessage()) {
+      //kontrollerar i funktionen om klassen errorMessage finns redan i sidan så den behövs inte läggas till igen.
     } else {
       addToBag.insertAdjacentHTML(
         "afterend",
@@ -168,6 +173,7 @@ function removeErrorMessage() {
 }
 
 function productInCart(cartInStorage, productCharacteristics) {
+  //den funktionen tar emot den ny skapade objekten och kontrollerar om den liknar en annan objekt som finns redan i listan så den behöver inte läggas till.
   let checkList = [];
 
   for (let i = 0; i < cartInStorage.length; i++) {
@@ -181,7 +187,7 @@ function productInCart(cartInStorage, productCharacteristics) {
     }
   }
   if (checkList.includes(true)) {
-    //kontrollerar om det finns en produkt som uppfyller samma egenskaper som den nyvalda produktern.
+    //om den if-satsen uppfylls betyder det att en objekt i listan matchar med den ny skapade objekten.
     return true;
   } else {
     return false;
@@ -191,3 +197,4 @@ function productInCart(cartInStorage, productCharacteristics) {
 let shoppingCart = JSON.parse(localStorage.getItem("aboutProducts"));
 
 numberOfProducts.innerHTML = shoppingCart.length;
+//upptaderar alltid antalet produkter utifrån längen av produkt listan som finns i shopping cart sidan.
