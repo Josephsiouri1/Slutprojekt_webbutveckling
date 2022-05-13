@@ -304,6 +304,7 @@ iframe {
 #footer a i {
     font-size: 2rem;
     color: black;
+    padding: 1%;
 }
 #footer i:hover {
     color: grey;
