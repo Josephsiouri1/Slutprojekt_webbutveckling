@@ -228,8 +228,9 @@ article figure a {
     color: black;
     font-family: var(--font-text);
     height: 5vh;
-    border-radius: 12px;
+    border-radius: 15px;
     width: auto;
+    padding: 0.5%;
     align-items: center;
     justify-content: center;
 }
@@ -249,10 +250,11 @@ article figure a {
     color: black;
     background-color: white;
     width: auto;
+    padding: 0.5%;
     height: 5vh;
     justify-content: center;
     align-items: center;
-    border-radius: 15px;
+    border-radius: 20px;
 }
 .delete-buy-buttons {
     display: flex;
